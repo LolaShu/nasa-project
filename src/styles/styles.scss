@@ -1,0 +1,57 @@
+@import 'setup';
+@import 'variables';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap');
+
+html {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    max-width: 1600px;
+    width: 90%;
+    margin: 0 auto;      
+    height: 100vh;
+}
+
+body{
+    background-color: $lightGrey;
+}
+
+h1,h2,h3,p,button, span{
+    font-family: 'Raleway', sans-serif;
+}
+
+h1{
+    color: $darkGrey;
+    @include fluid-font-size(1.6rem, 2.5rem);
+    font-weight: 400;
+    cursor: default;
+    margin-bottom: 0;
+}
+
+p{
+    font-weight: 300;
+    cursor: default;
+    @include fluid-font-size(1rem, 1.7rem);
+
+    &.header-extended{
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+    
+}
+
+h3{
+    @include fluid-font-size(1rem, 2rem);
+}
+
+button{
+    @include fluid-font-size(1rem, 2.2rem);
+}
+    
+span{
+    font-weight: 400;
+}

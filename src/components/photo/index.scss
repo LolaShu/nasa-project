@@ -1,0 +1,81 @@
+@import '../../styles/variables';
+.NASA-Project-Photos__{
+    &Container{
+        display: flex;       
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+        padding: 0; 
+    }    
+
+    &SinglePhoto{  
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        background-color: rgba(231, 237, 243, 0.5);
+        width: 45%;
+        max-height: auto;
+        margin-bottom: 15px;
+        padding: 2%;
+        border-radius: 10px;
+        box-shadow:0.2px 0.2px 5px 0.2px #666565;
+
+        @media only screen and (max-width:900px){
+            width: 100%;
+        }   
+    }    
+
+    &Picture{
+        width: 100%;
+        border-radius: 10px;        
+        min-height: 100px;
+        overflow: hidden;
+    
+        & img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+    }
+
+    &DescriptionSection{
+        display: flex;
+        flex-direction: column;  
+        cursor: default;
+    }
+
+    &Date{
+        cursor: default;
+    }
+
+    &Expandable{        
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+
+        .NASA-Project__Button__Container{            
+            align-self: center;
+        }
+    }
+
+    &Title{
+        display: inline-block;
+        color: $metalGrey;
+        width: 80%;
+    }
+
+    &Description{
+        display: none;        
+        
+        &-show{
+            display: inline-block;
+        }
+    }
+
+    &Buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+}
