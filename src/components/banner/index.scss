@@ -1,5 +1,5 @@
 @import '../../styles/variables';
-
+@import '../../styles/mixins';
 .NASA-Project__Banner__{
     &Container{
         display: inline-block;
@@ -10,9 +10,10 @@
         transform: translateX(-50%);
         background-color: $lightGreen;        
         color: $darkGreen;
-        border-radius: 10px;
-        padding: 10px 10px;
+        border-radius: 14px;
+        padding: 10px 14px;
         text-align: center;
+        @include fluid-font-size(1rem, 1.7rem);
 
         &.-show{
             visibility: visible;
@@ -22,7 +23,7 @@
         &.-hide{
             visibility: hidden;                
         }
-        
+
         p{
             margin: 0;
             font-weight: 400; 

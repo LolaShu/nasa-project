@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 .NASA-Project-Photos__{
     &Container{
         display: flex;       
@@ -36,6 +37,8 @@
             height: 100%;
             object-fit: contain;
             border-radius: 10px;
+            @include fluid-font-size(1rem, 1.5rem);
+            font-family: 'Raleway', sans-serif;
         }
     }
 
