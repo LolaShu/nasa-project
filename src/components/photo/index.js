@@ -83,13 +83,12 @@ function Photo({data}) {
                                 </div>  
                                 <p className='NASA-Project-Photos__Date'>{id}</p>                                                      
                                 <div className='NASA-Project-Photos__Buttons'>
-                                    <Button                                          
-                                        tooltipText='like'
-                                        ariaLabel='Like button'
-                                        onClick={()=>handleLike(id)}
-                                    >
-                                        {photo.liked?(<AiFillHeart/>):(<AiOutlineHeart/>)}
-                                    </Button>                       
+                                    {photo.liked?
+                                        (
+                                        <Button tooltipText='unlike' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiFillHeart/></Button>
+                                        ):(<Button tooltipText='like' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiOutlineHeart/></Button>
+                                        )
+                                    }                                                         
                                     <Button 
                                         id={`button${id}`} 
                                         value={photo.url}
