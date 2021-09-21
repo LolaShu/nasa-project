@@ -9,25 +9,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.wrapper {
-    max-width: 1600px;
-    width: 90%;
-    margin: 0 auto;      
-    height: 100vh;
-}
-
-.parentDiv{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    
-    main{
-        flex-grow: 1;
-    }
-}
-    
-
-
 body{
     background-color: $lightGrey;
 }
@@ -42,6 +23,7 @@ h1{
     font-weight: 400;
     cursor: default;
     margin-bottom: 0;
+    font-weight: bold;
 }
 
 p{
@@ -53,8 +35,7 @@ p{
         margin-top: 5px;
         margin-bottom: 20px;
         font-weight: 300;
-    }
-    
+    }    
 }
 
 h3{
@@ -65,14 +46,33 @@ span{
     font-weight: 400;
 }
 
+.wrapper {
+    max-width: 1600px;
+    width: 90%;
+    margin: 0 auto;      
+    height: 100vh;
+}
+
+.parentDiv{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;   
+    
+    main{
+        flex-grow: 1;
+    }
+}
+
 footer{
-    height: auto;
-    text-align: center;
+    height: auto;    
     border-top: 1px solid $darkGrey;
+    display: inline-block;
     
     p{
+        
         padding: 15px 0;
         margin-top: 0;
+        text-align: center;
     }
     
 }

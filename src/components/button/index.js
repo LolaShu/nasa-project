@@ -6,11 +6,13 @@ function Button({
     tooltipText,
     id,
     value,    
-    ariaLabel
+    ariaLabel,
+    preset
 }){    
+    
 
     return (
-        <div className='NASA-Project__Button__Container' >            
+        <div className={`NASA-Project__Button__Container-${preset}`} >            
                 <button id={id} value={value} onClick={onClick} aria-label={ariaLabel}>
                     {children}                    
                 </button>

@@ -6,7 +6,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
-        padding: 0; 
+        padding: 0;
     }    
 
     &SinglePhoto{  
@@ -17,7 +17,7 @@
         width: 45%;
         max-height: auto;
         margin-bottom: 15px;
-        padding: 10px 25px;
+        padding: 0 0 10px 0;
         border-radius: 10px;
         box-shadow:0.2px 0.2px 5px 0.2px #666565;
 
@@ -27,10 +27,13 @@
     }    
 
     &Picture{
-        width: 100%;
+        width: 95%;
         border-radius: 10px;        
         min-height: 100px;
         overflow: hidden;
+        margin: 0 auto;
+        padding-top: 15px;
+        
     
         & img{
             width: 100%;
@@ -50,6 +53,8 @@
 
     &Date{
         cursor: default;
+        width: 95%;
+        margin: 20px auto;
     }
 
     &Expandable{        
@@ -58,9 +63,18 @@
         width: 100%;
         justify-content: space-between;
         cursor: pointer;
+        padding: 0 2.5%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        transition: all 0.3s ease-in-out;        
+
+        &:hover{            
+            background-color: $lightBlue;
+        }
 
         .NASA-Project__Button__Container{            
             align-self: center;
+            padding:0;
         }
     }
 
@@ -74,12 +88,15 @@
         display: none;        
         
         &-show{
-            display: inline-block;            
+            display: inline-block; 
+            padding: 0 2.5%;           
         }
     }
 
     &Buttons{
         display: flex;
         justify-content: space-between;
+        width: 95%;
+        margin: 0 auto;
     }
 }

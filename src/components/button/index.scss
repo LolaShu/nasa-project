@@ -2,9 +2,11 @@
 @import '../../styles/mixins';
 
 .NASA-Project__Button__{
-    &Container{
-        position: relative;
-        display: inline-block;        
+    &Container-{
+        &default{
+            position: relative;
+            display: inline-block;
+            align-self: center;        
 
         button{
             background: transparent;
@@ -22,25 +24,49 @@
             }
         }
 
-    .tooltiptext {
-        visibility: hidden;    
-        width: max-content;
-        @include fluid-font-size(1.5rem, 1.8rem);
-        background-color: $darkGrey;
-        color: $lightGrey;
-        text-align: center;
-        border-radius: 14px;
-        padding: 4px 13px;
-        cursor: default;   
-        position: absolute;
-        z-index: 1;
-        top: -120%;
-        right: -32%;        
-        transition: show-in-out .3s ease-in-out; 
-    }
+        .tooltiptext {
+            visibility: hidden;    
+            width: max-content;
+            @include fluid-font-size(1.5rem, 1.8rem);
+            background-color: $darkGrey;
+            color: $lightGrey;
+            text-align: center;
+            border-radius: 14px;
+            padding: 4px 13px;
+            cursor: default;   
+            position: absolute;
+            z-index: 1;
+            top: -120%;
+            right: -32%;        
+            transition: show-in-out .3s ease-in-out; 
+        }
 
         &:hover .tooltiptext {
             visibility: visible;            
         }
+        }
+
+        &viewMore{
+            margin: 15px auto;
+            button{
+                display: inline-block;
+                width: max-content;
+                padding: 12px;                
+                @include fluid-font-size(1rem, 2rem);
+                color: $darkGrey;
+                background-color: $lightGrey;
+                border: 1.5px solid $darkGrey;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                font-weight: bold;
+
+                &:hover{
+                    background-color: $lightBlue;
+                }
+            }
+            
+}
+        
     }
 }

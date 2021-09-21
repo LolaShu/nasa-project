@@ -1,7 +1,7 @@
 import React, {useState, useRef } from 'react';
 import {Button, Banner} from '../../components';
 import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai';
-import {FiChevronDown} from 'react-icons/fi';
+import {FiChevronDown,FiChevronUp} from 'react-icons/fi';
 import {IoCopyOutline} from 'react-icons/io5';
 
 import './index.scss';
@@ -12,9 +12,9 @@ function Photo({data}) {
     const bannerRef=useRef(null);    
     
     //Like button handler
-    function handleLike(k){
+    function handleLike(id){
         const newArray = photoArray.map((photo)=>{
-            if(k===photo.date){
+            if(id===photo.date){
                 const updatedItem = {
                     ...photo,
                     liked:!photo.liked
@@ -37,9 +37,9 @@ function Photo({data}) {
         }
     }    
     //Arrow button handler
-    function handleClick(j){        
+    function handleClick(id){        
         const newArray = photoArray.map((photo)=>{
-            if(j===photo.date){
+            if(id===photo.date){
                 const updatedItem = {
                     ...photo,
                     active:!photo.active
@@ -68,11 +68,11 @@ function Photo({data}) {
                                 <div className = 'NASA-Project-Photos__DescriptionSection'>
                                     <div className='NASA-Project-Photos__Expandable' onClick={()=>handleClick(id)}>
                                         <h3 className='NASA-Project-Photos__Title'>{photo.title}</h3>
-                                        <Button                                              
-                                            tooltipText='description'
+                                        <Button   preset='default'                                            tooltipText='description'
                                             ariaLabel='Show description'
                                         >
-                                            <FiChevronDown/>
+                                            {photo.active?<FiChevronUp/>:<FiChevronDown/>}
+                                            
                                         </Button>
                                     </div>                                    
                                     <p className={`NASA-Project-Photos__Description${photo.active ? '-show':''}`}>{photo.explanation}</p>
@@ -85,17 +85,22 @@ function Photo({data}) {
                                 <div className='NASA-Project-Photos__Buttons'>
                                     {photo.liked?
                                         (
-                                        <Button tooltipText='unlike' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiFillHeart/></Button>
-                                        ):(<Button tooltipText='like' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiOutlineHeart/></Button>
+                                        <Button 
+                                        preset='default'
+                                        tooltipText='unlike' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiFillHeart/></Button>
+                                        ):(<Button 
+                                            preset='default'
+                                            tooltipText='like' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiOutlineHeart/></Button>
                                         )
                                     }                                                         
                                     <Button 
+                                        preset='default'
                                         id={`button${id}`} 
                                         value={photo.url}
                                         tooltipText='copy URL' 
                                         onClick={()=>copyLink(id)}
                                         ariaLabel='Copcy link button'                                
-                                        >
+                                    >
                                             <IoCopyOutline/>
                                     </Button>
                                 </div>                                
