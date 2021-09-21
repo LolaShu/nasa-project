@@ -21,7 +21,7 @@
         }
 
     .tooltiptext {
-        visibility: visible;    
+        visibility: hidden;    
         width: max-content;
         @include fluid-font-size(1rem, 2rem);
         background-color: $darkGrey;
@@ -40,7 +40,7 @@
             content: '';
             position: absolute;
             top: 100%; 
-            right: 19%;        
+            right: 27%;        
             border-width: 5px;
             border-style: solid;
             border-color: $darkGrey transparent transparent transparent;

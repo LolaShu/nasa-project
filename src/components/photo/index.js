@@ -79,7 +79,7 @@ function Photo({data}) {
                                     <p className={`NASA-Project-Photos__Description${photo.active ? '-show':''}`}>{photo.explanation}</p>
                                 </div>                                  
                                 <div className='NASA-Project-Photos__Picture'>
-                                    <img src={photo.url} alt={`Photo of the ${id} day`}/>
+                                    <img src={photo.url} alt={`Selected on the ${id} day`}/>
                                     
                                 </div>  
                                 <p className='NASA-Project-Photos__Date'>{id}</p>                                                      
