@@ -66,10 +66,9 @@ function Photo({data}) {
                         return(
                             <li className='NASA-Project-Photos__SinglePhoto' key={id} id={id}> 
                                 <div className = 'NASA-Project-Photos__DescriptionSection'>
-                                    <div className='NASA-Project-Photos__Expandable'>
+                                    <div className='NASA-Project-Photos__Expandable' onClick={()=>handleClick(id)}>
                                         <h3 className='NASA-Project-Photos__Title'>{photo.title}</h3>
-                                        <Button  
-                                            onClick={()=>handleClick(id)}
+                                        <Button                                              
                                             tooltipText='description'
                                             ariaLabel='Show description'
                                         >
