@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .NASA-Project__Button__{
     &Container{
@@ -12,6 +13,7 @@
             cursor: pointer;
             z-index: 10;        
             transition: transform .3s ease-in-out;
+            @include fluid-font-size(1rem, 2.2rem);
 
             &:hover{
                 transform: scale(1.2);  
@@ -19,25 +21,26 @@
         }
 
     .tooltiptext {
-        visibility: hidden;    
+        visibility: visible;    
         width: max-content;
+        @include fluid-font-size(1rem, 2rem);
         background-color: $darkGrey;
         color: $lightGrey;
         text-align: center;
-        border-radius: 6px;
-        padding: 2px 4px;
+        border-radius: 16px;
+        padding: 2px 13px;
         cursor: default;   
         position: absolute;
         z-index: 1;
         top: -130%;
-        left: 0;
+        right: -32%;        
         transition: show-in-out .3s ease-in-out;
 
         &:after{
             content: '';
             position: absolute;
             top: 100%; 
-            left: 18%;         
+            right: 19%;        
             border-width: 5px;
             border-style: solid;
             border-color: $darkGrey transparent transparent transparent;
