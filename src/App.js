@@ -41,6 +41,9 @@ function App() {
             <h1>Photo of the day</h1>
             <p className='header-extended'>by NASA's Astromomy Photo of the day (APOD) API</p>  
             <Photo data={photos}/>
+            <footer>
+              <p>Created by Olga Shnurenko</p>
+            </footer>
           </>        
         )}
       </div>   
