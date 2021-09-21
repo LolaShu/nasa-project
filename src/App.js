@@ -7,7 +7,7 @@ function App() {
   //Initialize states
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [count, setCount] = useState(6);
+  const [errorMsg, setErrorMsg] = useState('');
   const [page, setPage]=useState(0);
   
   //Fetching data from API
@@ -23,15 +23,15 @@ function App() {
         }          
         );        
         setPhotos((photos)=>[...photos,...response.data]);
-        console.log(photos)
+        setErrorMsg('');
+        // console.log(photos)
         
         
       }catch(error){
-        alert(error);
+        setErrorMsg('Error while loading data. Try again later.');
       }finally{
         setLoading(false);
-      }
-      
+      }      
     }
 
     getPhotos() 
@@ -60,8 +60,8 @@ function App() {
         ):( 
         <>
             <Photo data={photos}/>
-            
-            <button onClick={loadMore}>View More</button>
+             {errorMsg && <p className="errorMsg">{errorMsg}</p>}
+            <button onClick={(e)=>loadMore()}>View More</button>
             
           </>        
         )}
