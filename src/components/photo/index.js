@@ -8,7 +8,6 @@ import './index.scss';
 
 function Photo({data}) {
     const [ photoArray, setPhotoArray ] = useState(data);
-
     const bannerRef=useRef(null);    
     
     //Like button handler
@@ -57,22 +56,21 @@ function Photo({data}) {
             <Banner 
                 ref={bannerRef}
                 message='Image URL copied to the clipboard!'
-                />       
-            
+                />
             <ul className = 'NASA-Project-Photos__Container'>
                 {
                     photoArray.map((photo)=>{
-                        const id = photo.date
+                        const id = photo.date;
                         return(
                             <li className='NASA-Project-Photos__SinglePhoto' key={id} id={id}> 
                                 <div className = 'NASA-Project-Photos__DescriptionSection'>
                                     <div className='NASA-Project-Photos__Expandable' onClick={()=>handleClick(id)}>
                                         <h3 className='NASA-Project-Photos__Title'>{photo.title}</h3>
-                                        <Button   preset='default'                                            tooltipText='description'
-                                            ariaLabel='Show description'
-                                        >
+                                        <Button   
+                                            preset='default'                                            
+                                            tooltipText='description'
+                                            ariaLabel='Show description'>
                                             {photo.active?<FiChevronUp/>:<FiChevronDown/>}
-                                            
                                         </Button>
                                     </div>                                    
                                     <p className={`NASA-Project-Photos__Description${photo.active ? '-show':''}`}>{photo.explanation}</p>
@@ -84,24 +82,30 @@ function Photo({data}) {
                                 <p className='NASA-Project-Photos__Date'>{id}</p>                                                      
                                 <div className='NASA-Project-Photos__Buttons'>
                                     {photo.liked?
-                                        (
-                                        <Button 
-                                        preset='default'
-                                        tooltipText='unlike' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiFillHeart/></Button>
-                                        ):(<Button 
+                                        (<Button 
                                             preset='default'
-                                            tooltipText='like' ariaLabel='Like button' onClick={()=>handleLike(id)}><AiOutlineHeart/></Button>
+                                            tooltipText='unlike' 
+                                            ariaLabel='Like button' 
+                                            onClick={()=>handleLike(id)}>
+                                            <AiFillHeart/>
+                                        </Button>):
+                                        (<Button
+                                            preset='default'
+                                            tooltipText='like' 
+                                            ariaLabel='Like button' 
+                                            onClick={()=>handleLike(id)}>
+                                            <AiOutlineHeart/>
+                                        </Button>
                                         )
                                     }                                                         
                                     <Button 
                                         preset='default'
                                         id={`button${id}`} 
                                         value={photo.url}
-                                        tooltipText='copy URL' 
+                                        tooltipText='copy' 
                                         onClick={()=>copyLink(id)}
-                                        ariaLabel='Copcy link button'                                
-                                    >
-                                            <IoCopyOutline/>
+                                        ariaLabel='Copcy link button'>
+                                        <IoCopyOutline/>
                                     </Button>
                                 </div>                                
                             </li>

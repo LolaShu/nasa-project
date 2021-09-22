@@ -8,46 +8,47 @@
             display: inline-block;
             align-self: center;        
 
-        button{
-            background: transparent;
-            border: none;
-            margin: 0;
-            padding: 0;
-            color: $darkGrey;
-            cursor: pointer;
-            z-index: 10;                    
-            transition: transform .3s ease-in-out;
-            @include fluid-font-size(2rem, 3rem);
+            button{
+                background: transparent;
+                border: none;
+                margin: 0;
+                padding: 0;
+                color: $darkGrey;
+                cursor: pointer;
+                z-index: 10;                    
+                transition: transform .3s ease-in-out;
+                @include fluid-font-size(2rem, 3rem);
 
-            &:hover{
-                transform: scale(1.2);  
+                &:hover{
+                    transform: scale(1.2);  
+                }
             }
-        }
 
-        .tooltiptext {
-            visibility: hidden;    
-            width: max-content;
-            @include fluid-font-size(1.5rem, 1.8rem);
-            background-color: $darkGrey;
-            color: $lightGrey;
-            text-align: center;
-            border-radius: 14px;
-            padding: 4px 13px;
-            cursor: default;   
-            position: absolute;
-            z-index: 1;
-            top: -120%;
-            right: -32%;        
-            transition: show-in-out .3s ease-in-out; 
-        }
+            .tooltiptext {
+                visibility: hidden;    
+                width: max-content;
+                @include fluid-font-size(1.2rem, 1.8rem);
+                background-color: $darkGrey;
+                color: $lightGrey;
+                text-align: center;
+                border-radius: 14px;
+                padding: 4px 10px;
+                cursor: default;   
+                position: absolute;
+                z-index: 1;
+                top: -120%;
+                right: -65%;        
+                transition: show-in-out .3s ease-in-out; 
+            }
 
-        &:hover .tooltiptext {
-            visibility: visible;            
-        }
+            &:hover .tooltiptext {
+                visibility: visible;            
+            }
         }
 
         &viewMore{
             margin: 15px auto;
+            
             button{
                 display: inline-block;
                 width: max-content;
@@ -64,9 +65,8 @@
                 &:hover{
                     background-color: $lightBlue;
                 }
-            }
-            
-}
+            }            
+        }
         
     }
 }

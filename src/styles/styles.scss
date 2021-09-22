@@ -58,7 +58,7 @@ span{
     flex-direction: column;
     min-height: 100vh;   
     
-    main{
+    & main{
         flex-grow: 1;
     }
 }
