@@ -36,14 +36,19 @@
                 cursor: default;   
                 position: absolute;
                 z-index: 1;
-                top: -120%;
-                right: -65%;        
-                transition: show-in-out .3s ease-in-out; 
+                top: -110%;
+                right: -65%;
+                transition: visibility .3s ease-in-out; 
+                
+                &.show{
+                    visibility: visible;
+                }
             }
 
-            &:hover .tooltiptext {
-                visibility: visible;            
-            }
+            // &:hover .tooltiptext {
+            //     visibility: visible; 
+            //     animation: showIn 1s showOut 1s 1s;           
+            // }
         }
 
         &viewMore{
@@ -69,4 +74,41 @@
         }
         
     }
+}
+
+@keyframes showIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }    
+}
+
+@-webkit-keyframes showIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+@keyframes showOut {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }    
+}
+
+@-webkit-keyframes showOut {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }    
 }

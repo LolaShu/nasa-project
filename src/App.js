@@ -35,27 +35,28 @@ function App() {
     setPage((page)=>page +1);
   };
   
+  
   return (    
     <div className='NASA-Project_Container'>      
       <div className='wrapper'>
         <div className='parentDiv'>
           <main>
             <h1>Photo of the day</h1>
-            <p className='header-extended'>by NASA's Astromomy Photo of the day (APOD) API</p>
-            {loading?(
-              <> 
-                <Photo data={photos}/>
+            <p className='header-extended'>by NASA's Astromomy Photo of the day (APOD) API</p> 
+            <Photo data={photos} loading={loading} />          
+            {loading?(           
                 <Loader/>
-              </>
               ):(
-                <Photo data={photos}/>
+                null
               )}
           </main>          
           <Button 
             preset='viewMore'
             onClick={()=>loadMore()} 
             ariaLabel='View more button'>
-            View More
+            {loading?(
+              'Loading...'
+            ):('View More')}
           </Button>          
           <footer>
             <p>Created by Olga Shnurenko</p>

@@ -1,4 +1,6 @@
 import './index.scss';
+import {useState} from 'react';
+import classNames from 'classnames';
 
 function Button({
     onClick=()=>null,
@@ -9,14 +11,30 @@ function Button({
     ariaLabel,
     preset
 }){    
-    
+    const [showToolTip, setShowToolTip] = useState(false)
+
+    function handleClick(){ 
+        setShowToolTip(false);        
+            onClick();
+            
+        
+    }
+
+    function handleMouseOver(){
+        setShowToolTip(true)
+        console.log(showToolTip)
+    }
+
+    function handleMouseOut(){
+        setShowToolTip(false)
+    }
 
     return (
         <div className={`NASA-Project__Button__Container-${preset}`} >            
-                <button id={id} value={value} onClick={onClick} aria-label={ariaLabel}>
+                <button id={id} value={value} onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut} onClick={handleClick} aria-label={ariaLabel}>
                     {children}                    
                 </button>
-                <span className='tooltiptext'>{tooltipText}</span>           
+                <span className={classNames('tooltiptext',{'show':showToolTip})}>{tooltipText}</span>           
         </div>
         
     )

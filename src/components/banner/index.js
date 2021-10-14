@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, {useState, forwardRef, useImperativeHandle} from 'react';
 import './index.scss';
 
@@ -13,7 +14,7 @@ const Banner = forwardRef(({message},ref) => {
     }))
 
     return (
-        <div  className={`NASA-Project__Banner__Container ${active?'-show':'-hide'}`}>        
+        <div  className={classNames('NASA-Project__Banner__Container',{'-show':active},{'-hide':!active})}>        
             <p>{message}</p>
         </div>
     );

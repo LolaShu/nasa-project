@@ -59,7 +59,8 @@ span{
     min-height: 100vh;   
     
     & main{
-        flex-grow: 1;
+        flex-grow: 1;  
+        position: relative;      
     }
 }
 
